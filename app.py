@@ -35,7 +35,11 @@ def get_data():
         return pd.DataFrame(columns=["StudentID", "Name", "Points", "Rank"])
 
 def update_data(df):
-    conn.update(spreadsheet=st.secrets["connections"]["gsheets"]["spreadsheet"], worksheet="Students", data=df)
+    try:
+        conn.update(worksheet="Students", data=df)
+        st.cache_data.clear() # Ini untuk memaksa webnya refresh data terbaru
+    except Exception as e:
+        st.error(f"Waduh, ada masalah koneksi: {e}")
 
 # --- 3. UI STYLING ---
 st.markdown("""

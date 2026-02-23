@@ -62,7 +62,7 @@ st.markdown("""
         text-transform: uppercase;
     }
     </style>
-    """, unsafe_allow_value=True)
+    """, unsafe_allow_html=True)
 
 # --- 4. SIDEBAR / LOGIN ---
 st.sidebar.image(LOGO_URL, width=100)

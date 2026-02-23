@@ -28,11 +28,8 @@ LOGO_URL = "IMG_1644.png" # Placeholder for the ST Logo
 conn = st.connection("gsheets", type=GSheetsConnection)
 
 def get_data():
-    try:
-        return conn.read(worksheet="Students", ttl="1m")
-    except:
-        # Create initial dataframe if sheet is empty or doesn't exist
-        return pd.DataFrame(columns=["StudentID", "Name", "Points", "Rank"])
+    # Menggunakan .create seringkali lebih ampuh untuk link publik daripada .update
+    conn.create(worksheet="Students", data=df)
 
 def update_data(df):
     try:

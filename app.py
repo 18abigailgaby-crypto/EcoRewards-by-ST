@@ -35,7 +35,7 @@ def get_data():
         return pd.DataFrame(columns=["StudentID", "Name", "Points", "Rank"])
 
 def update_data(df):
-    conn.update(worksheet="Students", data=df)
+    conn.update(spreadsheet=st.secrets["connections"]["gsheets"]["spreadsheet"], worksheet="Students", data=df)
 
 # --- 3. UI STYLING ---
 st.markdown("""

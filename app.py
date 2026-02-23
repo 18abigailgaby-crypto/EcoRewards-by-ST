@@ -21,7 +21,7 @@ else:
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 # Logo and Title
-LOGO_URL = "https://storage.googleapis.com/generativeai-downloads/images/sang_timur_logo.png" # Placeholder for the ST Logo
+LOGO_URL = "IMG_1644.png" # Placeholder for the ST Logo
 
 # --- 2. DATABASE CONNECTION (Google Sheets) ---
 # Ensure you have configured [connections.gsheets] in your .streamlit/secrets.toml
